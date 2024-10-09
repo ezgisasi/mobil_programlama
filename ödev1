@@ -2,9 +2,14 @@ import 'dart:io';
 
 void main() {
   while (true) {
-    print("İşlem tipini seçiniz (+, -, *, /)");
+    print("İşlem tipini seçiniz (+, -, *, /) veya çıkmak için 'exit' yazın:");
 
     String secim = stdin.readLineSync()!;
+
+    if (secim == 'exit') {
+      print("Programdan çıkılıyor...");
+      break;
+    }
 
     if (secim != '+' && secim != '-' && secim != '*' && secim != '/') {
       print("Geçersiz işlem seçimi.");
@@ -16,10 +21,10 @@ void main() {
 
     print("İkinci parametreyi giriniz: ");
     double parametre2 = double.parse(stdin.readLineSync()!);
-
-    if (secim == '/' && parametre2 == 0) {
-      print("Hata: Sıfıra bölme yapılamaz!");
-      continue;
+    
+    if(secim == '/' && parametre2 == 0){
+        print("Sıfıra bölme hatası!");
+        continue;
     }
 
     double? sonuc;
@@ -40,7 +45,7 @@ void main() {
           break;
       }
       if (sonuc != null) {
-        print("Sonuç: $sonuc\n");
+        print("Sonuç: $parametre1 $secim $parametre2 = $sonuc\n");
       }
     } catch (e) {
       print("Hata oluştu: $e");
