@@ -9,22 +9,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Renk Değiştirici',
-      home: RenkDegistiriciEkran(),
+      home: Ekran(),
     );
   }
 }
 
-class RenkDegistiriciEkran extends StatefulWidget {
+class Ekran extends StatefulWidget {
   @override
-  _RenkDegistiriciEkranDurumu createState() => _RenkDegistiriciEkranDurumu();
+  _EkranRengi createState() => _EkranRengi();
 }
 
-class _RenkDegistiriciEkranDurumu extends State<RenkDegistiriciEkran> {
-  Color arkaPlanRengi = Colors.yellow;
+class _EkranRengi extends State<Ekran> {
+  Color mevcutArkaPlanRengi = Colors.yellow;
 
-  void rengiDegistir() {
+  void arkaPlanRenginiDegistir() {
     setState(() {
-      arkaPlanRengi = (arkaPlanRengi == Colors.yellow)
+      mevcutArkaPlanRengi = (mevcutArkaPlanRengi == Colors.yellow)
           ? Colors.blue
           : Colors.yellow;
     });
@@ -33,10 +33,10 @@ class _RenkDegistiriciEkranDurumu extends State<RenkDegistiriciEkran> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: arkaPlanRengi,
+      backgroundColor: mevcutArkaPlanRengi,
       body: Center(
         child: ElevatedButton(
-          onPressed: rengiDegistir,
+          onPressed: arkaPlanRenginiDegistir,
           child: Text('Rengi Değiştir'),
         ),
       ),
