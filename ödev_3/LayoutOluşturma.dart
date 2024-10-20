@@ -46,7 +46,8 @@ class HomePage extends StatelessWidget {
                 children: [
                   const Icon(Icons.local_hospital, color: Colors.white),
                   const SizedBox(width: 95),
-                  const Text( 'Sağlık',
+                  const Text(
+                    'Sağlık',
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
@@ -66,6 +67,11 @@ class HomePage extends StatelessWidget {
                   borderSide: const BorderSide(color: Colors.grey),
                 ),
               ),
+            ),
+            const SizedBox(height: 30),
+            const Text(
+              'İstediğiniz firmada indirim yakalama fırsatı...',
+              style: TextStyle(color: Colors.grey),
             ),
             const SizedBox(height: 20),
             Expanded(
